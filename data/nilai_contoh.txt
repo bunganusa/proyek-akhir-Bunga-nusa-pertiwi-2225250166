@@ -1,0 +1,7 @@
+# Format: ID, Nama, Nilai
+A001, Ayu, 85
+A002, Budi, 78
+A003, Citra, 60
+A004, Doni, 100
+A005, Eka, 0
+A006, Fahri, 105
