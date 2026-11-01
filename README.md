@@ -1,42 +1,41 @@
-# 📊 Program Rekap dan Analisis Nilai Matematika Kelas
+# Program Rekap dan Analisis Nilai Matematika Kelas
 
-![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-In%20Development-orange)
-
-Aplikasi berbasis antarmuka baris perintah (*command-line interface* / CLI) menggunakan Python untuk membantu guru matematika mengolah data nilai siswa secara otomatis, akurat, dan konsisten. Program ini dirancang untuk memenuhi Tugas Proyek Akhir Mata Kuliah **Algoritma dan Pemrograman** (S1 Pendidikan Matematika FKIP UNTIRTA).
+**Mata Kuliah:** Algoritma dan Pemrograman (Pertemuan 14 & 15)  
+**Program Studi:** S1 Pendidikan Matematika FKIP Untirta  
+**Dosen Pengampu:** Dr. Aan Hendrayana, S.Si., M.Pd.  
 
 ---
 
-## 📌 Fitur Utama
-
-- 📂 **Membaca Data Otomatis**: Membaca file `.txt` yang berisi ID, Nama, dan Nilai siswa.
-- 🛡️ **Validasi Input Rigor**: Memastikan nilai berada pada rentang valid $0 \le \text{nilai} \le 100$ dan mengabaikan format data yang rusak (*corrupted*).
-- 📈 **Analisis Statistik Kelas**:
-  - Menghitung nilai rata-rata kelas.
-  - Menentukan nilai tertinggi (maksimum) dan terendah (minimum).
-- 🎯 **Klasifikasi Ketuntasan (KKM)**: Menghitung jumlah siswa yang tuntas dan belum tuntas berdasarkan nilai KKM (default: 75.0).
-- 📝 **Ekspor Laporan**: Mencetak ringkasan hasil rekap ke terminal dan menyimpannya secara otomatis ke file `output/laporan_rekap.txt`.
+## 1. Deskripsi
+Program ini dikembangkan untuk membantu guru matematika mengolah rekapitulasi nilai siswa secara otomatis dari file teks. Program memvalidasi rentang nilai (0–100), menghitung nilai rata-rata, nilai minimum, nilai maksimum, menentukan status ketuntasan berdasarkan KKM, serta mengekspor hasil statistik ke dalam file laporan.
 
 ---
 
-## 📂 Struktur Repositori
+## 2. Fitur Utama
+- **Membaca File Data:** Memuat data ID, Nama, dan Nilai dari file `.txt` yang berada di folder `data/`.
+- **Validasi Nilai Ketat:** Menyaring nilai di luar rentang 0 - 100 dan menangani format baris yang tidak sesuai.
+- **Analisis Statistik:** Perhitungan otomatis untuk nilai rata-rata, nilai tertinggi (max), dan nilai terendah (min).
+- **Analisis Ketuntasan KKM:** Klasifikasi siswa tuntas ($\ge 75$) dan belum tuntas.
+- **Ekspor Laporan:** Menyimpan ringkasan rekapitulasi secara otomatis ke folder `output/laporan_rekap.txt`.
 
+---
+
+## 3. Struktur Folder Proyek
 ```text
 proyek-akhir-nama-tim/
 ├── .gitignore
 ├── README.md
 ├── proposal.md
 ├── data/
-│   └── nilai_contoh.txt      # Data sampel input nilai
+│   └── nilai_contoh.txt      # File data nilai input
 ├── output/
-│   ├── .gitkeep              # Penanda repositori Git
-│   └── laporan_rekap.txt     # Hasil output eksekusi program
+│   ├── .gitkeep              # Penanda folder Git
+│   └── laporan_rekap.txt     # File hasil ekspor laporan
 ├── src/
 │   ├── __init__.py
-│   ├── analisis.py           # Logika matematika & kalkulasi statistik
+│   ├── analisis.py           # Logika kalkulasi & statistik
 │   ├── data_io.py            # Pemrosesan baca/tulis file (I/O)
 │   ├── main.py               # Main entry point program
-│   └── utilitas.py           # Fungsi validasi & pemformatan laporan
+│   └── utilitas.py           # Validasi nilai & format laporan
 └── tests/
-    └── test_case.md          # Rincian skenario pengujian (Normal, Batas, Invalid)
+    └── test_case.md          # Dokumen skenario uji coba
